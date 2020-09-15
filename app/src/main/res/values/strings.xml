@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">PuppiesGram</string>
+    <string name="title_activity_about">Acerda de Mi</string>
+    <string name="text_titulo">Rocky dog</string>
+    <string name="text_titulomascotas">Listado de Mascotas</string>
+    <string name="btn_myclick">Click</string>
+    <string name="submit">Enviar</string>
+    <string name="mensaje">Diste click en el boton flotante</string>
+    <string name="text_accion">Accion</string>
+    <string-array name="planetas">
+        <item>Mercurio</item>
+        <item>Venus</item>
+        <item>Tierra</item>
+        <item>Marte</item>
+        <item>Jupiter</item>
+    </string-array>
+    <string name="titulo_tarjeta">Android 30.0</string>
+    <string name="descripcion_tarjeta">Esta es la version donde si incluye material design</string>
+    <string name="oncreate">oncreate</string>
+    <string name="onstart">onStart</string>
+    <string name="onresume">onresume</string>
+    <string name="onrestart">onrestart</string>
+    <string name="onpause">onpause</string>
+    <string name="onstop">onstop</string>
+    <string name="ondestroy">ondestroy</string>
+    <string name="editText">bienvenido</string>
+
+    <string name="nombre">Eduardo Leon</string>
+    <string name="telefono">0424-8587119</string>
+    <string name="email">eduleon78@gmail.com</string>
+    <string name="pnombre">nombre</string>
+    <string name="ptelefono">telefono</string>
+    <string name="pemail">email</string>
+
+    <string name="text_rating">0</string>
+    <string name="menu_favorito">Mascotas favoritas</string>
+    <string name="menu_contacto">Contacto</string>
+    <string name="menu_about">Acerca de</string>
+    <string name="menu_lista_contactos">Lista de Contactos</string>
+    <string name="menu_editar">Editar</string>
+    <string name="menu_eliminar">Eliminar</string>
+    <string name="menu_view">Ver imagen</string>
+    <string name="menu_view_detail">Ver detalles</string>
+    <string name="about_title">Eduardo Leon</string>
+    <string name="about_description">Estudiante de desarrollo de apliaciones moviles, con SDK android Studios 4.0.1.</string>
+    <string name="et_nombre">Nombre completo</string>
+    <string name="et_email">Email</string>
+    <string name="et_descripcion">Descripción</string>
+    <string name="btn_enviar_comentario">Enviar Comentario</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
