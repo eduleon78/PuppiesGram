@@ -1,4 +1,4 @@
-package com.leonestudios.puppiesgram;
+package com.leonestudios.puppiesgram.vista.fragment;
 
 import android.content.Intent;
 import android.os.Build;
@@ -23,6 +23,9 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
+import com.leonestudios.puppiesgram.R;
+import com.leonestudios.puppiesgram.adapter.PerfilMascotaAdapter;
+import com.leonestudios.puppiesgram.pojo.Mascota;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package com.leonestudios.puppiesgram;
+package com.leonestudios.puppiesgram.pojo;
 
 import java.io.Serializable;
 

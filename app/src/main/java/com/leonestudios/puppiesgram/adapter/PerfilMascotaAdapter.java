@@ -1,4 +1,4 @@
-package com.leonestudios.puppiesgram;
+package com.leonestudios.puppiesgram.adapter;
 
 import android.app.Activity;
 import android.view.LayoutInflater;
@@ -11,6 +11,9 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.leonestudios.puppiesgram.R;
+import com.leonestudios.puppiesgram.pojo.Mascota;
 
 import java.util.ArrayList;
 

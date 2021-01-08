@@ -1,4 +1,4 @@
-package com.leonestudios.puppiesgram;
+package com.leonestudios.puppiesgram.adapter;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -12,6 +12,11 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.leonestudios.puppiesgram.DetalleContactoActivity;
+import com.leonestudios.puppiesgram.R;
+import com.leonestudios.puppiesgram.db.ContructorContactos;
+import com.leonestudios.puppiesgram.pojo.Contacto;
 
 import java.util.ArrayList;
 
@@ -35,25 +40,31 @@ public class ContactoAdaptador extends RecyclerView.Adapter<ContactoAdaptador.Co
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ContactoViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final ContactoViewHolder contactoViewHolder, int position) {
         final Contacto contacto = contactos.get(position);
-        holder.imgFoto.setImageResource(contacto.getFoto());
-        holder.tvNombreCV.setText(contacto.getNombre());
-        holder.tvTelefonoCV.setText(contacto.getTelefono());
-        holder.imgFoto.setOnClickListener(new View.OnClickListener() {
+        contactoViewHolder.imgFoto.setImageResource(contacto.getFoto());
+        contactoViewHolder.tvNombreCV.setText(contacto.getNombre());
+        contactoViewHolder.tvTelefonoCV.setText(contacto.getTelefono());
+        contactoViewHolder.tvLikes.setText(String.valueOf(contacto.getLikes()) + "Likes");
+        contactoViewHolder.imgFoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(activity, contacto.getNombre(), Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(activity, DetalleContactoActivity.class);
-                contac = new Contacto( contacto.getNombre(), contacto.getTelefono(), contacto.getEmail(), contacto.getFoto());
+                contac = new Contacto(contacto.getNombre(), contacto.getTelefono(), contacto.getEmail(), contacto.getFoto(), contacto.getLikes());
                 intent.putExtra("mycontact", contac);
                 activity.startActivity(intent);
             }
         });
-        holder.btnLike.setOnClickListener(new View.OnClickListener() {
+        contactoViewHolder.btnLike.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(activity, "Diste like a " + contacto.getNombre(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(activity, "Diste like a " + contacto.getNombre(),
+                        Toast.LENGTH_SHORT).show();
+
+                ContructorContactos constructorContactos = new ContructorContactos(activity);
+                constructorContactos.darLikeContacto(contacto);
+                contactoViewHolder.tvLikes.setText(constructorContactos.obtenerLikesContacto(contacto));
             }
         });
     }
@@ -69,13 +80,16 @@ public class ContactoAdaptador extends RecyclerView.Adapter<ContactoAdaptador.Co
         private TextView tvNombreCV;
         private TextView tvTelefonoCV;
         private ImageButton btnLike;
+        private TextView tvLikes;
 
         public ContactoViewHolder(@NonNull View itemView) {
             super(itemView);
-            imgFoto         = (ImageView) itemView.findViewById(R.id.imgFoto);
-            tvNombreCV      = (TextView) itemView.findViewById(R.id.tvNombreCV);
-            tvTelefonoCV    = (TextView) itemView.findViewById(R.id.tvTelefonoCV);
-            btnLike         = (ImageButton) itemView.findViewById(R.id.btnLike);
+
+            imgFoto             = (ImageView) itemView.findViewById(R.id.imgFoto);
+            tvNombreCV          = (TextView) itemView.findViewById(R.id.tvNombreCV);
+            tvTelefonoCV        = (TextView) itemView.findViewById(R.id.tvTelefonoCV);
+            btnLike             = (ImageButton) itemView.findViewById(R.id.btnLike);
+            tvLikes             = (TextView) itemView.findViewById(R.id.tvLikes);
         }
     }
 

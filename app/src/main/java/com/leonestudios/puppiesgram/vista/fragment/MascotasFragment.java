@@ -1,4 +1,4 @@
-package com.leonestudios.puppiesgram;
+package com.leonestudios.puppiesgram.vista.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,6 +10,11 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.leonestudios.puppiesgram.pojo.Mascota;
+import com.leonestudios.puppiesgram.adapter.MascotaAdapter;
+import com.leonestudios.puppiesgram.R;
+import com.leonestudios.puppiesgram.adapter.PerfilMascotaAdapter;
 
 import java.util.ArrayList;
 

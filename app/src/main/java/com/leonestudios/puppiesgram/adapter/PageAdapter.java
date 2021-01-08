@@ -1,4 +1,4 @@
-package com.leonestudios.puppiesgram;
+package com.leonestudios.puppiesgram.adapter;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;

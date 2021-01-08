@@ -19,6 +19,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.leonestudios.puppiesgram.pojo.Contacto;
 
 public class DetalleContactoActivity extends AppCompatActivity {
 
@@ -29,7 +30,7 @@ public class DetalleContactoActivity extends AppCompatActivity {
     public Contacto contact;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle_contacto);
 

@@ -13,6 +13,9 @@ import android.view.KeyEvent;
 
 
 import com.google.android.material.tabs.TabLayout;
+import com.leonestudios.puppiesgram.adapter.PageAdapter;
+import com.leonestudios.puppiesgram.vista.fragment.PerfilFragment;
+import com.leonestudios.puppiesgram.vista.fragment.RecycleviewFragment;
 
 import java.util.ArrayList;
 

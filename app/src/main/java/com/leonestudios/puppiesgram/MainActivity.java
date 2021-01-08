@@ -4,19 +4,30 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.NotificationCompat;
 import androidx.fragment.app.Fragment;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewpager.widget.ViewPager;
 
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.google.android.material.tabs.TabLayout;
+import com.leonestudios.puppiesgram.adapter.PageAdapter;
+import com.leonestudios.puppiesgram.pojo.Mascota;
+import com.leonestudios.puppiesgram.vista.fragment.MascotaFragment;
+import com.leonestudios.puppiesgram.vista.fragment.MascotasFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -62,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
         ArrayList<Fragment> fragments = new ArrayList<>();
         fragments.add(new MascotasFragment());
         fragments.add(new MascotaFragment());
-        return  fragments;
+        return fragments;
     }
     private void setUpViewPager(){
         viewPagerm.setAdapter(new PageAdapter(getSupportFragmentManager(), agregarFragments()));
@@ -78,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.mFavorito:
                 Intent intent = new Intent(MainActivity.this, ListaFavoritos.class);
@@ -99,6 +110,11 @@ public class MainActivity extends AppCompatActivity {
             case R.id.mListado:
                 Intent intente = new Intent(MainActivity.this, ListadoMascotas.class);
                 startActivity(intente);
+                finish();
+                break;
+            case R.id.mNotificaciones:
+                Intent intento = new Intent(MainActivity.this, NotificacionActivity.class);
+                startActivity(intento);
                 finish();
                 break;
 

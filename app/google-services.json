@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "5353806366",
+    "project_id": "puppiesgram2",
+    "storage_bucket": "puppiesgram2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:5353806366:android:db5b2cab7000b665f92c0f",
+        "android_client_info": {
+          "package_name": "com.leonestudios.puppiesgram"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "5353806366-jjs412q6i5k210ql9j0b3avflvov3qge.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.leonestudios.puppiesgram",
+            "certificate_hash": "39017f8c91c9ec674d9b859df1f99b16598ea03c"
+          }
+        },
+        {
+          "client_id": "5353806366-annnftbbgeolpd6hmgemic6nr1o5bbaj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4nPZl75deUJwQjCFyJI4tjv6oVYS24AE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "5353806366-annnftbbgeolpd6hmgemic6nr1o5bbaj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

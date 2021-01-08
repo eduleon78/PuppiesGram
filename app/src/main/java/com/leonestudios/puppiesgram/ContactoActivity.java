@@ -59,7 +59,7 @@ public class ContactoActivity extends AppCompatActivity {
         String toEmails = etTextEmailAddress.getText().toString();
         String mensaje = etTextMultiLine.getText().toString();
 
-        String emailbody = "Enviado por: " + nombre + "Mensaje: " + mensaje;
+        String emailBody = "Enviado por: " + nombre + " Mensaje: " + mensaje;
 
         final String fromEmail = "";
         final String fromPassword = "";
@@ -73,6 +73,7 @@ public class ContactoActivity extends AppCompatActivity {
         properties.put("mail.smtp.starttls.enable", starttls);
         properties.put("mail.smtp.host", emailHost);
         properties.put("mail.smtp.port", emailPort);
+        properties.put("mail.smtp.body", emailBody);
 
         Session session = Session.getInstance(properties, new Authenticator() {
             @Override
@@ -86,7 +87,7 @@ public class ContactoActivity extends AppCompatActivity {
             message.setFrom(new InternetAddress(fromEmail));
             message.setRecipients(Message.RecipientType.TO,InternetAddress.parse(toEmails.trim()));
             message.setSubject(nombre.trim());
-            message.setText(emailbody.trim());
+            message.setText(emailBody.trim());
             new SendMail().execute(message);
 
             etTextPersonName.setText("");
@@ -147,7 +148,7 @@ public class ContactoActivity extends AppCompatActivity {
                 });
 
                 builder.show();
-            }else{
+            }else {
 
                 Toast.makeText(getApplicationContext(),"Algo salió mal ?",Toast.LENGTH_SHORT).show();
             }
