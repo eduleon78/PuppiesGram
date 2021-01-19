@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -56,6 +57,12 @@ public class RecycleviewFragment extends Fragment implements IRecyclerViewFragme
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         rvContactos.setLayoutManager(llm);
 
+    }
+
+    @Override
+    public void generarGridLayoutVertical() {
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
+        rvContactos.setLayoutManager(gridLayoutManager);
     }
 
     @Override

@@ -1,25 +1,17 @@
 package com.leonestudios.puppiesgram;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.app.NotificationCompat;
 import androidx.fragment.app.Fragment;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewpager.widget.ViewPager;
 
-import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.content.Context;
 import android.content.Intent;
-import android.media.RingtoneManager;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -30,7 +22,6 @@ import com.leonestudios.puppiesgram.vista.fragment.MascotaFragment;
 import com.leonestudios.puppiesgram.vista.fragment.MascotasFragment;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     SwipeRefreshLayout sfiMiIndicadorRefresh;
@@ -76,10 +67,14 @@ public class MainActivity extends AppCompatActivity {
         return fragments;
     }
     private void setUpViewPager(){
-        viewPagerm.setAdapter(new PageAdapter(getSupportFragmentManager(), agregarFragments()));
+        viewPagerm.setAdapter(new PageAdapter(getSupportFragmentManager(), agregarFragments(), behavior()));
         tabLayoutm.setupWithViewPager(viewPagerm);
         tabLayoutm.getTabAt(0).setIcon(R.drawable.ic_baseline_home_24);
         tabLayoutm.getTabAt(1).setIcon(R.drawable.ic_baseline_pets_24);
+    }
+
+    private int behavior() {
+        return 0;
     }
 
     @Override

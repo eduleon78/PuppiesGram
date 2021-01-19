@@ -1,13 +1,11 @@
 package com.leonestudios.puppiesgram;
 
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.KeyEvent;
 
@@ -36,23 +34,29 @@ public class ListadoMascotas extends AppCompatActivity {
 
         setUpViewPager();
 
-        if (toolbar != null){
+        if (toolbar != null) {
             setSupportActionBar(toolbar);
         }
     }
-    private ArrayList<Fragment> agregarFragments(){
+
+    private ArrayList<Fragment> agregarFragments() {
         ArrayList<Fragment> fragments = new ArrayList<>();
         fragments.add(new RecycleviewFragment());
         fragments.add(new PerfilFragment());
         return fragments;
     }
 
-    private void setUpViewPager(){
-        viewPager.setAdapter(new PageAdapter(getSupportFragmentManager(), agregarFragments()));
+    private void setUpViewPager() {
+        viewPager.setAdapter(new PageAdapter(getSupportFragmentManager(), agregarFragments(), behavior()));
         tabLayout.setupWithViewPager(viewPager);
         tabLayout.getTabAt(0).setIcon(R.drawable.ic_baseline_contacts_24);
         tabLayout.getTabAt(1).setIcon(R.drawable.ic_baseline_perm_contact_calendar_24);
     }
+
+    private int behavior() {
+        return 0;
+    }
+
 
     public boolean onKeyDown(int keyCode, KeyEvent event){
         if (keyCode == KeyEvent.KEYCODE_BACK){

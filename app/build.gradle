@@ -7,7 +7,7 @@ android {
 
     defaultConfig {
         applicationId "com.leonestudios.puppiesgram"
-        minSdkVersion 16
+        minSdkVersion 26
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -44,6 +44,9 @@ dependencies {
     implementation 'com.google.firebase:firebase-messaging'
     implementation 'com.google.firebase:firebase-core'
     implementation 'com.google.firebase:firebase-analytics'
+
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 
     implementation files('libs\\activation.jar')
     implementation files('libs\\additionnal.jar')

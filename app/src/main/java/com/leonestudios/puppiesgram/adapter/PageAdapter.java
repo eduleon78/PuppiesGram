@@ -9,10 +9,11 @@ import java.util.ArrayList;
 
 public class PageAdapter extends FragmentPagerAdapter {
 
+
     private ArrayList<Fragment> fragments;
 
-    public PageAdapter(@NonNull FragmentManager fm, ArrayList<Fragment> fragments){
-        super(fm);
+    public PageAdapter(@NonNull FragmentManager fm, ArrayList<Fragment> fragments, int bevavior){
+        super(fm, bevavior);
         this.fragments = fragments;
     }
     @Override
